@@ -24,11 +24,11 @@ class TestModel(unittest.TestCase):
         print_and_log(f"Test Accuracy: {accuracy * 100:.2f}%\n")
         cls.assertGreater(accuracy, 0.70, "Accuracy should be greater than 70%")
 
-    def test_training_time(self):
-        start_time = time.time()
-        train_model(cls.X_train, cls.y_train)
-        end_time = time.time()
-        
-        # Neuer Grenzwert für die Laufzeit
-        cls.assertLess(end_time - start_time, 10, "Training time should be less than 10 seconds")
-      print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
+def test_training_time(self):
+    start_time = time.time()
+    train_model(self.X_train, self.y_train)
+    end_time = time.time()
+    
+    # Neuer Grenzwert für die Laufzeit
+    self.assertLess(end_time - start_time, 10, "Training time should be less than 10 seconds")
+    print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
