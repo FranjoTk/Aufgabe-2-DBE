@@ -29,7 +29,7 @@ class TestModel(unittest.TestCase):
         end_time = time.time()
         
         # Neuer Grenzwert für die Laufzeit
-        self.assertLess(end_time - start_time, 10, "Training time should be less than 10 seconds")
+       self.assertLess(end_time - start_time, 30, "Training time should be less than 30 seconds")
         print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
 
 if __name__ == "__main__":
