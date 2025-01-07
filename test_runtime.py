@@ -31,8 +31,8 @@ class TestModel(unittest.TestCase):
         train_model(self.X_train, self.y_train)
         end_time = time.time()
         
-        # Neuer Grenzwert für die Laufzeit (angepasst auf kleineren Datensatz)
-        self.assertLess(end_time - start_time, 50, "Training time should be less than 50 seconds")
+        # Neuer Grenzwert für die Laufzeit
+        self.assertLess(end_time - start_time, 10, "Training time should be less than 10 seconds")
         print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
 
 if __name__ == "__main__":
