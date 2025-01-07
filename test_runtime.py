@@ -31,4 +31,4 @@ class TestModel(unittest.TestCase):
         
         # Neuer Grenzwert für die Laufzeit
         cls.assertLess(end_time - start_time, 10, "Training time should be less than 10 seconds")
-        print_and_log(f"Training time: {end_time - start-time} sec/N>
+      print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
