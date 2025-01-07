@@ -41,12 +41,13 @@ def download_and_prepare_data():
     X, y = mnist.data.astype('float32'), mnist.target.astype('int64')
     X /= 255.0
 
-    # Kleinerer Datensatz verwenden
-    X_train, y_train = X[:10000], y[:10000]
-    X_test, y_test = X[10000:11000], y[10000:11000]
+    # Noch kleinerer Datensatz: 1.000 Trainings- und 100 Testbeispiele
+    X_train, y_train = X[:1000], y[:1000]
+    X_test, y_test = X[1000:1100], y[1000:1100]
 
     # Ausgabe mit print_and_log
     print_and_log(f"MNIST: {X.shape}, {y.shape}")
+    print_and_log(f"Train set size: {X_train.shape}, Test set size: {X_test.shape}")
     return (X_train, y_train, X_test, y_test)
 
 @my_logger
@@ -75,3 +76,4 @@ if __name__ == "__main__":
 
 # Datei schließen
 output_file.close()
+
