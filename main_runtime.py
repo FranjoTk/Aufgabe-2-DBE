@@ -41,9 +41,9 @@ def download_and_prepare_data():
     X, y = mnist.data.astype('float32'), mnist.target.astype('int64')
     X /= 255.0
 
-    # Noch kleinerer Datensatz: 1.000 Trainings- und 100 Testbeispiele
-    X_train, y_train = X[:1000], y[:1000]
-    X_test, y_test = X[1000:1100], y[1000:1100]
+    # Noch kleinerer Datensatz: 500 Trainings- und 50 Testbeispiele
+    X_train, y_train = X[:500], y[:500]
+    X_test, y_test = X[500:550], y[500:550]
 
     # Ausgabe mit print_and_log
     print_and_log(f"MNIST: {X.shape}, {y.shape}")
@@ -56,7 +56,7 @@ def train_model(X, y):
     scaler = MinMaxScaler()
     X = scaler.fit_transform(X)
     
-    model = LogisticRegression(solver='saga', multi_class='multinomial', max_iter=100, penalty='l2')
+    model = LogisticRegression(solver='saga', multi_class='multinomial', max_iter=20, penalty='l2')
     model.fit(X, y)
     y_pred = model.predict(X)
 
@@ -64,16 +64,5 @@ def train_model(X, y):
     accuracy = np.mean(y_pred == y)
     print_and_log(f"Train Accuracy: {accuracy * 100:.2f}%")
     print_and_log("Train confusion matrix:")
-    print_and_log(confusion_matrix(y, y_pred))
-    print_and_log("\nClassification report for classifier:")
-    print_and_log(classification_report(y, y_pred))
-
-    return model
-
-if __name__ == "__main__":
-    X_train, y_train, X_test, y_test = download_and_prepare_data()
-    model = train_model(X_train, y_train)
-
-# Datei schließen
-output_file.close()
+    print_and_log(confusion_matr
 
