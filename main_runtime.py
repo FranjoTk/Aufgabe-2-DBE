@@ -64,5 +64,17 @@ def train_model(X, y):
     accuracy = np.mean(y_pred == y)
     print_and_log(f"Train Accuracy: {accuracy * 100:.2f}%")
     print_and_log("Train confusion matrix:")
-    print_and_log(confusion_matr
+    print_and_log(confusion_matrix(y, y_pred))
+    print_and_log("\nClassification report for classifier:")
+    print_and_log(classification_report(y, y_pred))
+
+    return model
+
+if __name__ == "__main__":
+    X_train, y_train, X_test, y_test = download_and_prepare_data()
+    model = train_model(X_train, y_train)
+
+# Datei schließen
+output_file.close()
+
 
