@@ -4,9 +4,6 @@ import unittest
 import numpy as np
 from main_runtime import train_model, download_and_prepare_data
 
-# Datei öffnen für Ausgabe
-output_file = open("ausgabe2.txt", "w")
-
 def print_and_log(*args, **kwargs):
     """Funktion, die sowohl in die Konsole als auch in die Datei schreibt."""
     print(*args, **kwargs)
@@ -36,7 +33,6 @@ class TestModel(unittest.TestCase):
         print_and_log(f"Training time: {end_time - start_time:.5f} sec\n")
 
 if __name__ == "__main__":
-    unittest.main()
-
-# Datei schließen
-output_file.close()
+    # Datei mit Kontextmanager öffnen
+    with open("ausgabe2.txt", "w") as output_file:
+        unittest.main()
