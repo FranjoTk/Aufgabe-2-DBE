@@ -55,8 +55,8 @@ def download_and_prepare_data():
 def train_model(X, y):
     scaler = MinMaxScaler()
     X = scaler.fit_transform(X)
-    
-    model = LogisticRegression(solver='saga', multi_class='multinomial', max_iter=20, penalty='l2')
+
+    model = LogisticRegression(solver='saga', multi_class='multinomial', max_iter=100, penalty='l2')
     model.fit(X, y)
     y_pred = model.predict(X)
 
