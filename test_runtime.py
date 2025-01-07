@@ -7,7 +7,7 @@ from main_runtime import train_model, download_and_prepare_data
 def print_and_log(*args, **kwargs):
     """Funktion, die sowohl in die Konsole als auch in die Datei schreibt."""
     print(*args, **kwargs)
-    with open("ausgabe2.txt", "a") as output_file:  # Datei im Anhängemodus öffnen
+    with open("ausgabe.txt", "a") as output_file:  # Datei im Anhängemodus öffnen
         print(*args, **kwargs, file=output_file)
 
 class TestModel(unittest.TestCase):
